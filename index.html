@@ -1,20 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>david thomas dot click</title>
+        <style>
+            header {
+                background: #f0f0f0;
+                padding: 40px;
+                text-align: left;
+            }
+            
+            #wavingHeader {
+                display: inline-block;
+                font-size: 4em;
+                white-space: nowrap;
+            }
+            
+            #wavingHeader span {
+                display: inline-block;
+                animation: wave 2s ease-in-out infinite;
+                position: relative;
+            }
+    
+            @keyframes wave {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+    
+            #wavingHeader span:nth-child(even) { animation-delay: 0.1s; }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 id="wavingHeader">
+                <span>w</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span> 
+                <span>t</span><span>o</span> 
+                <span>m</span><span>y</span> 
+                <span>t</span><span>w</span><span>i</span><span>s</span><span>t</span><span>e</span><span>d</span>
+                <span>m</span><span>i</span><span>n</span><span>d</span>
+            </h1>
+        </header>
+
 <body>
-    <h1>Welcome to My Twisted Mind...</h1>
-    <p>This is a very simple webpage.</p>
-    
-    <button id="clickButton">Click Me!</button>
-    <p id="clickCount">Number of clicks: 0</p>
-    
- <!-- Audio element for background music -->
     <audio id="backgroundMusic" src="quo.mp3" autoplay loop></audio>
-    <button onclick="document.getElementById('backgroundMusic').play()">Play Music</button>
+    <img src="C:\Users\Owner\Downloads\devil.jpg" style="transition: transform 0.20s; width: 100px; height: 100px;" onmousedown="this.style.transform='scale(0.80)rotateY(360deg)'" onmouseup="this.style.transform='scale(1)'" onclick="document.getElementById('backgroundMusic').play()">CLICK DA DEVIL PEPE IF YOU DARE</img>   
+    <p>davidthomas dot click tell youre friends</p>
+
+
+
+    <img src="C:\Users\Owner\Downloads\image0.png" onmousedown="this.style.transform='scale(0.70)rotateX(40deg)'" onmouseup="this.style.transform='scale(1)'" style="transition: transform 0.20s; width: 300px; height: 300px;" id="clickButton"></img>
+    <audio id="fart" src="fart.mp3"></audio>
+    <audio id="fart2" src="fart2.mp3"></audio>
+    <audio id="fart3" src="fart3.mp3"></audio>
+    <audio id="fart5" src="fart5.mp3"></audio>
+
+    <script>
+    const playButton = document.getElementById('clickButton');
+    const audioTracks = [
+            document.getElementById('fart'),
+            document.getElementById('fart2'),
+            document.getElementById('fart3'),
+            document.getElementById('fart5')
+        ];
+        // Function to play a random track
+        function playRandomTrack() {
+            // Stop all tracks
+            audioTracks.forEach(track => {
+                track.pause();
+                track.currentTime = 0; // Reset to start
+            });
+
+            // Select a random track
+            const randomIndex = Math.floor(Math.random() * audioTracks.length);
+            const selectedTrack = audioTracks[randomIndex];
+
+            // Play the selected track
+            selectedTrack.play().catch(error => {
+                console.error('Failed to play audio:', error);
+            });
+        }
+
+        // Add click event listener to the button
+        playButton.addEventListener('click', playRandomTrack);
+    </script>
+
+    <p id="clickCount">numba of clicks: 0</p>
+    
     
     <script>
         let count = 0;
@@ -23,7 +99,7 @@
 
         button.addEventListener('click', function() {
             count++;
-            countDisplay.textContent = `Number of clicks: ${count}`;
+            countDisplay.textContent = `numba of clicks: ${count}`;
         });
     </script>
 </body>
