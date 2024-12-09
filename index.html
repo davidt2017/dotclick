@@ -138,7 +138,6 @@
 
     <p id="clickCount">numba of clicks: 0</p>
     
-    
     <script>
         let count = 0;
         const button = document.getElementById('clickButton');
@@ -149,5 +148,46 @@
             countDisplay.textContent = `numba of clicks: ${count}`;
         });
     </script>
+
+        <script>
+        let count = 0;
+        const button = document.getElementById('clickButton');
+        const countDisplay = document.getElementById('clickCount');
+
+        button.addEventListener('click', function() {
+            count++;
+            countDisplay.textContent = `numba of clicks: ${count}`;
+        });
+    </script>
+
+        <script>
+        // Function to get a random integer between min and max inclusive
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Get the random starting number
+        let currentNumber = getRandomInt(2000000, 8000000);
+
+        // Function to update number (this will be called by setInterval)
+        function updateNumber() {
+            document.getElementById('numberDisplay').textContent = currentNumber;
+            currentNumber++;
+        }
+
+        // Set interval to update every 10 milliseconds
+        window.onload = function() {
+            setInterval(updateNumber, 10);
+        };
+    </script>
+</head>
+
+<body>
+    <h3>global click total (live!)</h3>
+    <p id="numberDisplay">0</p>
+</body>
+    
 </body>
 </html>
