@@ -48,6 +48,55 @@
         // Start the animation
         moveGif();
     </script>
+
+       <head>
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>davidthomas dot click</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #flyingGif {
+            position: absolute;
+            width: 100px; /* Adjust based on your GIF's size */
+            height: 100px; /* Adjust based on your GIF's size */
+            transition: all 2s ease-in-out; /* Smooth transition for movement */
+        }
+    </style>
+</head>
+<body>
+    <img id="flyingGif" src="skele.gif" alt="Flying GIF">
+    <script>
+        const gif = document.getElementById('flyingGif');
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        let currentX = 0;
+        let currentY = 0;
+
+        function moveGif() {
+            const targetX = Math.floor(Math.random() * (windowWidth - gif.clientWidth));
+            const targetY = Math.floor(Math.random() * (windowHeight - gif.clientHeight));
+
+            // Smoothly animate to the new position
+            gif.style.transition = 'all 2s ease-in-out';
+            gif.style.left = targetX + 'px';
+            gif.style.top = targetY + 'px';
+
+            // Update current position
+            currentX = targetX;
+            currentY = targetY;
+
+            // Schedule the next move
+            setTimeout(moveGif, 1500);
+        }
+
+        // Start the animation
+        moveGif();
+    </script>
     
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
